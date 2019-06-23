@@ -1,0 +1,36 @@
+﻿@model BilgeAdam.HelloWeb.Models.Person
+@{
+    ViewData["Title"] = "Kişi Detayı";
+}
+
+<div class="panel panel-primary topMost">
+    <div class="panel-heading">Profil Sayfası</div>
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                                <img src="http://placehold.it/380x500" alt="" class="img-rounded img-responsive" />
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <h4>
+                                    @{ var fullName = $"{Model.FirstName} {Model.LastName}"; }
+                                    @fullName
+                                </h4>
+                                <p>
+                                    <i class="glyphicon glyphicon-gift"></i> @Model.BirthDate.ToString("dd MMMM yyyy")
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a href="/Home/People" class="btn btn-warning">Geri Dön</a>
+    </div>
+</div>
+

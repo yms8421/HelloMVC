@@ -10,8 +10,8 @@ namespace BilgeAdam.HelloWeb.Controllers
 {
     public class HomeController : Controller
     {
-        public List<Person> PeopleList { get; set; }
-        public HomeController()
+        public static List<Person> PeopleList { get; set; }
+        static HomeController()
         {
             PeopleList = new List<Person>
             {
@@ -57,7 +57,17 @@ namespace BilgeAdam.HelloWeb.Controllers
 
         public IActionResult People()
         {
-            return View();
+            return View(PeopleList);
+        }
+
+        public IActionResult Person(int id)
+        {
+            var p = PeopleList.FirstOrDefault(i => i.Id == id);
+            if (p != null)
+            {
+                return View(p);
+            }
+            return RedirectToAction("People");
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<BilgeAdam.HelloWeb.Models.Product>
+@{
+    ViewData["Title"] = "Ürünler";
+}
+
+<h2>Ürün Listesi</h2>
+
+<table class="table table-striped" id="pta">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Fiyat</th>
+            <th>Stok</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>@p.Stock</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Css {
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet"/>
+
+}
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#pta').DataTable();
+        });
+    </script>
+}
