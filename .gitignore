@@ -3,3 +3,6 @@
 ################################################################################
 
 /BilgeAdam.HelloWeb/.vs/BilgeAdam.HelloWeb/v15/Server/sqlite3
+/.vs/HelloMVC/v15
+/BilgeAdam.HelloWeb/BilgeAdam.HelloWeb/obj
+/BilgeAdam.HelloWeb/BilgeAdam.HelloWeb/bin/Debug/netcoreapp2.1
